@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import TestLocators
 from gener_user import GeneratorUser
+from url_links import UrlLinks
 
 
 class TestRegistration:
@@ -25,7 +26,7 @@ class TestRegistration:
         driver.find_element(*TestLocators.SEARCH_REGISTRATION_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.element_to_be_clickable((TestLocators.SEARCH_ENTER_BUTTON)))
-        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
+        assert driver.current_url == UrlLinks.authorization_page
 
     def test_registration_not_correct_password(self, driver):
         WebDriverWait(driver, 3).until(

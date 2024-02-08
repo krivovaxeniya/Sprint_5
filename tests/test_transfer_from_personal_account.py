@@ -1,6 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import TestLocators
+from url_links import UrlLinks
 
 
 class TestTransferFromPersonalAccount:
@@ -23,4 +24,4 @@ class TestTransferFromPersonalAccount:
         driver.find_element(*TestLocators.SEARCH_LOGO).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located((TestLocators.SEARCH_CONSTRUCTOR_FORM)))
-        assert 'https://stellarburgers.nomoreparties.site/' in driver.current_url
+        assert UrlLinks.site_main_page in driver.current_url

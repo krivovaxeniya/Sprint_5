@@ -100,3 +100,9 @@
     </tr>
   </tbody>
 </table>
+
+Для работы необходимы библиотеки: </br>
+<li>pytest</li>
+<li>selenium</li>
+
+Запуск тестов:  <b>pytest -v</b>

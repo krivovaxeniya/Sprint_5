@@ -1,6 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import TestLocators
+from url_links import UrlLinks
 
 
 class TestExitFromAccount:
@@ -13,4 +14,4 @@ class TestExitFromAccount:
         driver.find_element(*TestLocators.SEARCH_EXIT_BUTTON).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((TestLocators.SEARCH_AUTHORIZATION_FORM)))
-        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
+        assert driver.current_url == UrlLinks.authorization_page
